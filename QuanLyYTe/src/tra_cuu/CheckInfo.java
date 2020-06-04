@@ -18,8 +18,7 @@ public class CheckInfo extends Tracuu {
 		if(opt == 2) returnInfo("","cmnd");
 		else {
 			System.out.println("Ban muon tim kiem theo: 1 - CMND; 2 - Ma BHYT");
-			int option;
-			option = Integer.parseInt(s.nextLine());
+			int option = Integer.parseInt(s.nextLine());
 			if(option == 1) {
 				System.out.println("Nhap so CMND");
 				personal_id = s.nextLine();

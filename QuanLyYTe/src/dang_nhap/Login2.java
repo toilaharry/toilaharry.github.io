@@ -6,16 +6,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-import javax.swing.JFrame;
-
 import tra_cuu.Ket_noi_DB;
 
 public class Login2 {
+	
 	private String username;
 	private String password;
 	
 	Scanner s = new Scanner(System.in);
-	
+
 	private boolean user_pass() throws ClassNotFoundException, SQLException {
 		Connection connection = Ket_noi_DB.getPostgresqlConnection();
 		Statement statement = connection.createStatement();

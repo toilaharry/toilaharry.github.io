@@ -13,7 +13,7 @@ public class Chiso_dd extends Tracuu_be {
 
 		@Override
 		protected void showInfo(String code, String ten, String column) throws ClassNotFoundException, SQLException {
-			String sql = "select t.ma_be, t.tenbe, t.cmnd_me, c.cannang, c.chieucao from chiso_dd c, thongtin_be t where c.ma_be = t.ma_be";
+			String sql = "select t.ma_be, t.tenbe, t.cmnd_me, c.cannang, c.chieucao, t.ma_bh_me from chiso_dd c, thongtin_be t where c.ma_be = t.ma_be";
 			ResultSet rs = connectDB(sql);
 			ArrayList<Integer> ma_be = new ArrayList<Integer>();
 			

@@ -31,16 +31,23 @@ public class Login {
 	}
 	
 	public void setPassWord() throws ClassNotFoundException, SQLException {
-		System.out.println("Moi ban doi mat khau!");
-		System.out.println("Mat khau moi:");
-		password = s.nextLine();
-		Connection connection = Ket_noi_DB.getPostgresqlConnection();
-		Statement statement = connection.createStatement();
-		String sql = "update login set pass = " + "'" + password + "'" + "where username = " + "'" + username + "'";
-		statement.execute(sql);
-		
-		System.out.println("Ban da doi thanh cong!");
-		System.out.println("Moi ban dang nhap lai!");
+		System.out.println("Ban co muon doi mat khau khong?");
+		System.out.println("Nhap 1 - Co, 2 - Khong");
+		int opt = Integer.parseInt(s.nextLine());
+		if (opt == 2) return;
+		else {
+			System.out.println("Moi ban doi mat khau!");
+			System.out.println("Mat khau moi:");
+			password = s.nextLine();
+			Connection connection = Ket_noi_DB.getPostgresqlConnection();
+			Statement statement = connection.createStatement();
+			String sql = "update login set pass = " + "'" + password + "'" + "where username = " + "'" + username + "'";
+			statement.execute(sql);
+			
+			System.out.println("Ban da doi thanh cong!");
+			System.out.println("Moi ban dang nhap lai!");
+			login();
+		}
 	}
 	
 	
@@ -59,6 +66,7 @@ public class Login {
 			password = s.nextLine();
 		} 
 		System.out.println("Ban da dang nhap thanh cong!");
+		setPassWord();
 	}
 }
 
