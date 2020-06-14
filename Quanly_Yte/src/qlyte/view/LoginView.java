@@ -23,6 +23,7 @@ import java.awt.SystemColor;
 public class LoginView {
 
 	private JFrame frame;
+	private MainView window = new MainView();
 	
 	public JFrame getFrame() {
 		return frame;
@@ -121,7 +122,6 @@ public class LoginView {
 							EventQueue.invokeLater(new Runnable() {
 								public void run() {
 									try {
-										MainView window = new MainView();
 										window.getFrame().setVisible(true);
 									} catch (Exception e) {
 										e.printStackTrace();
