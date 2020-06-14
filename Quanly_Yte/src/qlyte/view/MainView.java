@@ -40,19 +40,12 @@ public class MainView {
 		this.frame = frame;
 	}
 	protected ListFrame[] listFrame;
-	
-	protected ListPKFrame ds_phongkham;
-	protected ListMomFrame ds_me;
-	protected ListChildFrame ds_be;
-	protected ListVacxinFrame ds_vacxin;
-	protected ListXnFrame ds_xetnghiem;
 	protected UpdateMom updateMom;
 	protected UpdateChild updateChild;
 	protected InsertMom insertMom;
 	protected InsertChild insertChild;
 	protected InputDeleteMom inputDeleteMom;
 	protected InputDeleteChild inputDeleteChild;
-	protected SukienView suKienView;
 	protected CreateEvents createEvents;
 	
 	/**
