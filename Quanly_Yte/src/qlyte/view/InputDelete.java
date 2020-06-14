@@ -22,11 +22,13 @@ public class InputDelete {
 	protected JLabel keyLabel;
 	protected JLabel mainLabel;
 	protected JButton xoaButton;
+	public static int count = 0;
 
 	/**
 	 * Create the application.
 	 */
 	public InputDelete() {
+		count ++;
 		initialize();
 	}
 

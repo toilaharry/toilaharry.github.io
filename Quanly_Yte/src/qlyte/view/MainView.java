@@ -40,12 +40,11 @@ public class MainView {
 		this.frame = frame;
 	}
 	protected ListFrame[] listFrame;
+	protected InputDelete[] inputDelete;
 	protected UpdateMom updateMom;
 	protected UpdateChild updateChild;
 	protected InsertMom insertMom;
 	protected InsertChild insertChild;
-	protected InputDeleteMom inputDeleteMom;
-	protected InputDeleteChild inputDeleteChild;
 	protected CreateEvents createEvents;
 	
 	/**
@@ -301,8 +300,7 @@ public class MainView {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				inputDeleteMom = new InputDeleteMom();
+			inputDelete[InputDelete.count] =  new InputDeleteMom();
 			}
 		});
 		
@@ -310,8 +308,7 @@ public class MainView {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				inputDeleteChild = new InputDeleteChild();
+				inputDelete[InputDelete.count] = new InputDeleteChild();
 			}
 		});
 		
