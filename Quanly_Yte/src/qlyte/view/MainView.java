@@ -39,7 +39,8 @@ public class MainView {
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
 	}
-
+	protected ListFrame[] listFrame;
+	
 	protected ListPKFrame ds_phongkham;
 	protected ListMomFrame ds_me;
 	protected ListChildFrame ds_be;
@@ -210,7 +211,7 @@ public class MainView {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					ds_phongkham = new ListPKFrame();
+					listFrame[ListFrame.count] =  new ListPKFrame();
 				} catch (ClassNotFoundException | SQLException e1) {
 					e1.printStackTrace();
 				}		
@@ -223,7 +224,7 @@ public class MainView {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					ds_me = new ListMomFrame();
+					listFrame[ListFrame.count] = new ListMomFrame();
 				}
 				catch(ClassNotFoundException | SQLException e2) {
 					e2.printStackTrace();
@@ -237,7 +238,7 @@ public class MainView {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					ds_be = new ListChildFrame();
+					listFrame[ListFrame.count] = new ListChildFrame();
 				}
 				catch(ClassNotFoundException | SQLException e3) {
 					e3.printStackTrace();
@@ -250,7 +251,7 @@ public class MainView {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 					try {
-						ds_vacxin = new ListVacxinFrame();
+						listFrame[ListFrame.count] = new ListVacxinFrame();
 					} catch (ClassNotFoundException | SQLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -263,7 +264,7 @@ public class MainView {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 					try {
-						ds_xetnghiem = new ListXnFrame();
+						listFrame[ListFrame.count] = new ListXnFrame();
 					} catch (ClassNotFoundException | SQLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -373,7 +374,7 @@ public class MainView {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					suKienView = new SukienView();
+					listFrame[ListFrame.count] = new SukienView();
 				} catch (ClassNotFoundException | SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

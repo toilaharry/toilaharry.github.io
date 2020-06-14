@@ -31,6 +31,8 @@ public class ListFrame {
 	protected JButton timkiemButton;
 	protected JLabel mainTitle;
 	
+	public static int count = 0;
+	
 
 	/**
 	 * Launch the application.
@@ -54,6 +56,7 @@ public class ListFrame {
 	 * @throws ClassNotFoundException 
 	 */
 	public ListFrame() throws ClassNotFoundException, SQLException {
+		count ++;
 		initialize();
 	}
 
