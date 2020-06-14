@@ -39,8 +39,9 @@ public class MainView {
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
 	}
-	protected ListFrame[] listFrame;
-	protected InputDelete[] inputDelete;
+	
+	protected ListFrame[] listFrame = new ListFrame[100000];
+	protected InputDelete[] inputDelete = new InputDelete[100000];
 	protected UpdateMom updateMom;
 	protected UpdateChild updateChild;
 	protected InsertMom insertMom;
