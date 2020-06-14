@@ -1,6 +1,5 @@
 package qlyte.view;
 
-import java.awt.EventQueue;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -20,24 +19,7 @@ import java.awt.Font;
 import javax.swing.JScrollPane;
 
 public class ListMomFrame extends ListFrame {
-
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ListMomFrame window = new ListMomFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	private Thongtin_meService ttMeService;
 	/**
 	 * Create the application.
 	 * @throws SQLException 
@@ -85,7 +67,7 @@ public class ListMomFrame extends ListFrame {
 				def.addColumn("Mã BHYT");
 				def.addColumn("Địa chỉ");
 				def.addColumn("Số điện thoại");
-				Thongtin_meService ttMeService = new Thongtin_meService();
+				ttMeService = new Thongtin_meService();
 				try {
 					List<Thongtin_me> tt = ttMeService.getTT_Me(2, nhapttText.getText());
 					for (Thongtin_me s : tt) {

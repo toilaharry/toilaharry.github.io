@@ -1,6 +1,5 @@
 package qlyte.view;
 
-import java.awt.EventQueue;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -21,21 +20,7 @@ import javax.swing.JScrollPane;
 
 public class ListPKFrame extends ListFrame {
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ListPKFrame window = new ListPKFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private PhongKhamService pkService;
 
 	/**
 	 * Create the application.
@@ -82,7 +67,7 @@ public class ListPKFrame extends ListFrame {
 				def.addColumn("Địa chỉ");
 				def.addColumn("Số điện thoại");
 				def.addColumn("Thời gian làm việc");
-				PhongKhamService pkService = new PhongKhamService();
+				pkService = new PhongKhamService();
 				
 				try {
 					List<Phong_Kham> pk = pkService.getAll_PK(2, nhapttText.getText());

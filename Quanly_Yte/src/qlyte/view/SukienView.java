@@ -1,6 +1,5 @@
 package qlyte.view;
 
-import java.awt.EventQueue;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -21,21 +20,7 @@ import javax.swing.JScrollPane;
 
 public class SukienView extends ListFrame {
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					SukienView window = new SukienView();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private SukienService skService;
 
 	/**
 	 * Create the application.
@@ -82,7 +67,7 @@ public class SukienView extends ListFrame {
 				def.addColumn("Thời gian");
 				def.addColumn("Địa điểm");
 				def.addColumn("Liên hệ");
-				SukienService skService = new SukienService();
+				skService = new SukienService();
 				
 				try {
 					List<Sukien> sk = skService.getAllSuKien();

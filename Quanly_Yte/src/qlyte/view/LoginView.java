@@ -37,22 +37,6 @@ public class LoginView {
 	private JButton loginButton;
 	private JTextField taikhoanText;
 
-	public static void main(String args[]) {
-		EventQueue.invokeLater(new Runnable() {
-			
-			@Override
-			public void run() {
-				LoginView loginView;
-				try {
-					loginView = new LoginView();
-					loginView.frame.setVisible(true);
-				} catch (ClassNotFoundException | SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 	/**
 	 * Create the application.
 	 * @throws SQLException 

@@ -1,6 +1,5 @@
 package qlyte.view;
 
-import java.awt.EventQueue;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -21,21 +20,7 @@ import javax.swing.JScrollPane;
 
 public class ListVacxinFrame extends ListFrame {
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ListVacxinFrame window = new ListVacxinFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private VacxinService vcService;
 
 	/**
 	 * Create the application.
@@ -80,7 +65,7 @@ public class ListVacxinFrame extends ListFrame {
 				def.addColumn("Mã vacxin");
 				def.addColumn("Tên vacxin");
 				def.addColumn("Chi tiết");
-				VacxinService vcService = new VacxinService();
+				vcService = new VacxinService();
 				
 				try {
 					List<Vacxin> vc = vcService.getAllVacxin(2, nhapttText.getText());

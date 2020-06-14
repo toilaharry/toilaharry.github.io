@@ -1,10 +1,7 @@
 package qlyte.view;
 
-import java.awt.EventQueue;
 import java.sql.SQLException;
 import java.util.List;
-
-import javax.swing.JFrame;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,29 +16,10 @@ import qlyte.service.Thongtin_beService;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Font;
-import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 public class ListChildFrame extends ListFrame {
+	private Thongtin_beService ttBeService;
 
-	private JFrame frame;
-	private JTextField nhapcmnd;
-	private JTable table;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ListChildFrame window = new ListChildFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -89,9 +67,9 @@ public class ListChildFrame extends ListFrame {
 				def.addColumn("Ngày sinh");
 				def.addColumn("CMND mẹ");
 				def.addColumn("Mã BHYT của mẹ");
-				Thongtin_beService ttBeService = new Thongtin_beService();
+				ttBeService = new Thongtin_beService();
 				try {
-					List<Thongtin_be> tt = ttBeService.getTT_be(2, nhapcmnd.getText());
+					List<Thongtin_be> tt = ttBeService.getTT_be(2, nhapttText.getText());
 					for (Thongtin_be s : tt) {
 						def.addRow(new Object[] {s.getMa_be(), s.getTenbe(), s.getNgaysinh(), 
 								s.getCmnd_me(), s.getMa_bh_me()});

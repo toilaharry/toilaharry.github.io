@@ -1,6 +1,5 @@
 package qlyte.view;
 
-import java.awt.EventQueue;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -20,22 +19,7 @@ import java.awt.Font;
 import javax.swing.JScrollPane;
 
 public class ListXnFrame extends ListFrame {
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ListXnFrame window = new ListXnFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private XetnghiemService vcService;
 
 	/**
 	 * Create the application.
@@ -80,7 +64,7 @@ public class ListXnFrame extends ListFrame {
 				def.addColumn("Mã xét nghiệm");
 				def.addColumn("Tên xét nghiệm");
 				def.addColumn("Chi tiết");
-				XetnghiemService vcService = new XetnghiemService();
+				vcService = new XetnghiemService();
 				
 				try {
 					List<Xetnghiem> xn = vcService.getAllXetnghiem(2, nhapttText.getText());
